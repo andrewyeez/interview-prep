@@ -34,6 +34,19 @@ let fruit = {
 
 }
 
+// Function Context
 console.log(fruit.name);
 fruit.getName(); // this.name = Apple
 fruit.otherObj.getOtherName(); // this.name = Orange
+
+// Global context
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#Global_context
+name = "global";
+// a little oopsie haha LET does not create a variable on the global Object
+// even if its created oustide a function
+// REMINDER: read more on LET
+let name2 = "notGLobal"
+console.log(this === window); // true
+console.log(window.name); // window.name = "global"
+console.log(this.name); // this.name = "global"
+console.log(this.name2); // undefined because we use 'let'
